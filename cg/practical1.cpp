@@ -15,7 +15,7 @@ circle(75, 60, 5);
 circle(75, 60, 7);
 circle(225, 60, 5);
 circle(225, 60, 7);
-
-delay(50000);
+getch();
+// delay(50000);
 closegraph();
 }
