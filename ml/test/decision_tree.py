@@ -23,7 +23,8 @@ def calculateInformationGain(title, entropyWhole, count):
     for value, counts in value_counts.items():
         informationGain = informationGain + (counts['yes']+counts['no'])*calculateEntropy(counts['yes'],counts['no'])/count
     informationGain = entropyWhole - informationGain
-    print(f"Information gain for {title}:{informationGain}")
+    # print(f"Information gain for {title}:{informationGain}")
+    return informationGain
 
 
 yes = 0 # Initializing yes and no values as 0.
@@ -42,8 +43,9 @@ with open('decision_tree.csv', newline='') as csvfile:
 entropyWhole = calculateEntropy(yes,no)
 print(calculateEntropy(yes,no))
 
-# calculateInformationGain('Outlook')
-
+informationGains = {}
 for title in titles:
-    calculateInformationGain(title, entropyWhole, yes+no)
-
+    informationGains[title] = calculateInformationGain(title, entropyWhole, yes+no)
+print(informationGains)
+max_key = max(informationGains, key=lambda k: informationGains[k])
+print(max_key)
