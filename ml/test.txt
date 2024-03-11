@@ -1,0 +1,1 @@
+cls && echo C:\Users\Aman\Desktop\Practical6.py ^> python practical6.py && python practical6.py && echo Name: Amanpreet Kaur && echo CRN: 2115011
